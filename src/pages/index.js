@@ -24,17 +24,15 @@ class IndexPage extends Component {
             })
         })
         return (
-            <section className="featured-works">
+            <div className="container album">
                     {
                         _.map(rows, (row , rowNumber) => (
-                            <div className="row tile is-ancestor " key={rowNumber}>
+                            <div className="row" key={rowNumber}>
                                 {
                                     _.map(row, (work, index) => (
-                                        <article className="work tile is-parent" key={index}>
-                                            <figure className="tile is-child box image is-square">
-                                                <img src={ "https://media.graphcms.com/resize=width:300,h:300,fit:crop/" + work.work.image.handle }/>
-                                            </figure>
-                                        </article>
+                                        <div className="col-xs-6 col-sm-3 text-center" key={index}>
+                                            <img className="img-fluid rounded" src={ "https://media.graphcms.com/resize=width:300,h:300,fit:crop/" + work.work.image.handle }/>
+                                        </div>
                                         )
                                     )
                                 }
@@ -42,7 +40,7 @@ class IndexPage extends Component {
                             )
                         )
                     }
-            </section>
+            </div>
         )
     }
 }

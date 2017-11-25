@@ -32,14 +32,12 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'carmen, marcos, art, fine arts, visual artist' },
       ]}
     />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css" />
-      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <Header />
-      <section className="section">
         <div className="container">
           {children()}
         </div>
-      </section>
   </div>
 )
 
