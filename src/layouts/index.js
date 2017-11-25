@@ -6,21 +6,25 @@ import Helmet from 'react-helmet'
 import './index.css'
 
 const Header = () => (
-  <div>
-    <div>
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Carmen Marcos Art
-        </Link>
-      </h1>
+    <div className="header container-fluid">
+        <nav className="navbar navbar-default">
+            <div className="container-fluid">
+                <div className="navbar-header">
+                    <a className="navbar-brand" href="#"><img src="http://cmarcos.net/assets/images/cmarcos.jpg" alt="" class="img-responsive"/></a>
+                </div>
+            </div>
+        </nav>
     </div>
-  </div>
+)
+
+const Footer = () => (
+    <footer className="small">
+        <div className="container">
+            <br/>
+            <div id="bottom-space"></div>
+            <p className="float-right">© 2017 Carmen Marcos</p>
+        </div>
+    </footer>
 )
 
 const TemplateWrapper = ({ children }) => (
@@ -38,6 +42,7 @@ const TemplateWrapper = ({ children }) => (
         <div className="container">
           {children()}
         </div>
+    <Footer/>
   </div>
 )
 
