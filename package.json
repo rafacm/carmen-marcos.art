@@ -22,7 +22,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
-    "test": "gatsby build"
+    "test": "export DEBUG_MODE=true && gatsby build"
   },
   "devDependencies": {
     "prettier": "^1.8.2"
