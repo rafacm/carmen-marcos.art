@@ -9,7 +9,6 @@ module.exports = {
           resolve: `gatsby-source-graphcms`,
           options: {
               endpoint: `https://api.graphcms.com/simple/v1/carmenmarcosart`,
-              token: `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MDI2MjA3OTMsImNsaWVudElkIjoiY2l2Z29zNmNqMDE5MjAxODRucDAxZGRkMiIsInByb2plY3RJZCI6ImNqNTlianpkMXVqcXYwMTc0NGhnMWUwN3giLCJwZXJtYW5lbnRBdXRoVG9rZW5JZCI6ImNqNmFsbWd1ajB6NnIwMTk2cTB1ZGt3bTUifQ.hbXYkRNlPRvSLYsp4gU28vloFRFa2ooqHfzuTi8BGpg`,
               query : `
                     query getAllFeaturedWorks { 
                         allWorks(filter: {
