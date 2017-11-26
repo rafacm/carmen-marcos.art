@@ -2,15 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-
 import './index.css'
+import cmarcos from './cmarcos-signature.jpg'
+
+console.log("cmarcos: ", cmarcos);
 
 const Header = () => (
     <div className="header container-fluid">
         <nav className="navbar navbar-default">
             <div className="container-fluid">
                 <div className="navbar-header">
-                    <a className="navbar-brand" href="#"><img src="http://cmarcos.net/assets/images/cmarcos.jpg" alt="" class="img-responsive"/></a>
+                    <a className="navbar-brand" href="/"><img className="img-responsive" src={cmarcos} alt=""/></a>
                 </div>
             </div>
         </nav>
