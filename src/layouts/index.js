@@ -10,11 +10,9 @@ console.log("cmarcos: ", cmarcos);
 const Header = () => (
     <div className="header container">
         <nav className="navbar navbar-default">
-            <div className="container-fluid">
                 <div className="navbar-header">
                     <a className="navbar-brand" href="/"><img className="img-responsive" src={cmarcos} alt=""/></a>
                 </div>
-            </div>
         </nav>
     </div>
 )
