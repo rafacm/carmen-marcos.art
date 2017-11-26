@@ -13,10 +13,11 @@ module.exports = {
                     query getAllFeaturedWorks { 
                         allWorks(filter: {
                         featured: true
-                      }, orderBy: date_DESC) {
+                      }, orderBy: updatedAt_DESC) {
                         id 
                         title
                         slug
+                        updatedAt
                         image { 
                           id
                           url
