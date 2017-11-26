@@ -8,7 +8,7 @@ import cmarcos from './cmarcos-signature.jpg'
 console.log("cmarcos: ", cmarcos);
 
 const Header = () => (
-    <div className="header container-fluid">
+    <div className="header container">
         <nav className="navbar navbar-default">
             <div className="container-fluid">
                 <div className="navbar-header">
@@ -24,6 +24,7 @@ const Footer = () => (
         <div className="container">
             <br/>
             <div id="bottom-space"></div>
+            <p className="float-left"><a href="mailto:info@carmen-marcos.art?subject=Carmen%20Marcos%20Art">info@carmen-marcos.art</a></p>
             <p className="float-right">© 2017 Carmen Marcos</p>
         </div>
     </footer>

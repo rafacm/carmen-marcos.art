@@ -24,7 +24,7 @@ class IndexPage extends Component {
             })
         })
         return (
-            <div className="container album">
+            <div className="album">
                     {
                         _.map(rows, (row , rowNumber) => (
                             <div className="row" key={rowNumber}>
