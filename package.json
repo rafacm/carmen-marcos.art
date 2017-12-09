@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Rafael Cordones <rafael@cordones.me>",
   "dependencies": {
-    "gatsby": "^1.9.117",
+    "gatsby": "^1.9.128",
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-google-analytics": "^1.0.12",
     "gatsby-plugin-react-helmet": "^1.0.5",
@@ -25,6 +25,7 @@
     "test": "export DEBUG_MODE=true && gatsby build"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.6.1",
     "prettier": "^1.8.2"
   }
 }
