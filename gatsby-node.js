@@ -38,8 +38,9 @@ query getAllFeaturedWorks {
                 const works = result.data.allWorks.edges;
                 console.log("works: ", works);
                 works.forEach(( node ) => {
-                    console.log("createPages: ", node);
+                    console.log("createPages node: ", node);
                     const path = "works/" + node.work.slug;
+                    console.log("createPages path: ", path);
                     createPage({
                         path,
                         component: workDetailPageTemplate,

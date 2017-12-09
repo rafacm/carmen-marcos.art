@@ -13,3 +13,11 @@
 .navbar img {
     width: 300px;
 }
+
+.album .row .work {
+    overflow-x: hidden;
+    overflow-y: visible;
+    background: #fff;
+    transition: box-shadow 250ms ease-out;
+    box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.025);
+}

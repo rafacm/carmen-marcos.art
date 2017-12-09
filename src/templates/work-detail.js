@@ -1,15 +1,22 @@
 import React from "react"
 
-class WorkDetailTemplate extends React.Component {
-    render() {
-
-        return (
-            <div>
-                <h1>Work detail</h1>
-            </div>
-        )
-    }
+export default ({ data }) => {
+    const post = data.markdownRemark
+    return (
+        <div>
+            <h1>
+                {post.frontmatter.title}
+            </h1>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </div>
+    )
 }
 
-export default WorkDetailTemplate
-
+export const query = graphql`
+  query WorkDetailBySlug($slug: String!) {
+    allWorks(fields: { slug: { eq: $slug } }) {
+      id
+      slug
+    }
+  }
+`
