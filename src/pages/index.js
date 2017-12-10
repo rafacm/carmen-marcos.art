@@ -30,7 +30,7 @@ class IndexPage extends Component {
                             <div className="row" key={rowNumber}>
                                 {
                                     _.map(row, (work, index) => (
-                                        <div className="work col-xs-6 col-sm-3 text-center" key={index}>
+                                        <div className="work col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center" key={index}>
                                             <Link to={"/works/" + work.work.slug }><img className="img-fluid rounded" src={ "https://media.graphcms.com/resize=width:300,h:300,fit:crop/" + work.work.image.handle }/></Link>
                                         </div>
                                         )
