@@ -9,33 +9,30 @@ module.exports = {
           resolve: `gatsby-source-graphcms`,
           options: {
               endpoint: `https://api.graphcms.com/simple/v1/carmenmarcosart`,
-              query : `
-                    query getAllFeaturedWorks { 
-                        allWorks(filter: {
-                        featured: true
-                      }, orderBy: updatedAt_DESC) {
-                        id 
-                        title
-                        slug
-                        updatedAt
-                        image { 
-                          id
-                          url
-                          height
-                          width
-                          size
-                          handle
-                          fileName
-                        }
-                        medium
-                        technique
-                        year
-                        date
+              query : `{
+                  allWorks(filter: { featured: true }, orderBy: updatedAt_DESC) {
+                      id 
+                      title
+                      slug
+                      updatedAt
+                      featured
+                      image { 
+                        id
+                        url
                         height
                         width
+                        size
+                        handle
+                        fileName
                       }
-                    }    
-                    `
+                      medium
+                      technique
+                      year
+                      date
+                      height
+                      width
+                  }
+              }`
           }
       },
       {

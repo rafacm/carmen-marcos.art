@@ -1,22 +1,73 @@
 import React from "react"
+import * as PropTypes from "prop-types"
+import Link from 'gatsby-link'
 
-export default ({ data }) => {
-    const post = data.markdownRemark
-    return (
-        <div>
-            <h1>
-                {post.frontmatter.title}
-            </h1>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </div>
-    )
+const propTypes = {
+    data: PropTypes.object.isRequired,
 }
 
-export const query = graphql`
-  query WorkDetailBySlug($slug: String!) {
-    allWorks(fields: { slug: { eq: $slug } }) {
-      id
-      slug
+class WorkDetailTemplate extends React.Component {
+    render() {
+        const work = this.props.data.works
+        const medium = work.medium
+        const technique = work.technique
+        let workTechniqueAndMedium;
+        if (medium == "PAPEL" && technique == "ACUARELA") {
+            workTechniqueAndMedium = "Watercolor on paper";
+        } else if (medium == "PAPEL" && technique == "CARBONCILLO,PINCEL") {
+            workTechniqueAndMedium = "Carbon and pencil on paper";
+        } else if (medium == "LIENZO" && technique == "OLEO") {
+            workTechniqueAndMedium = "Oil on canvas";
+        } else if (medium == "PAPEL" && technique == "OLEO") {
+            workTechniqueAndMedium = "Oil on paper";
+        } else if (medium == "LIENZO,MADERA" && technique == "OLEO") {
+            workTechniqueAndMedium = "Oil on canvas and wood";
+        } else if (medium == "PAPEL" && technique == "ACUARELA,TINTA") {
+            workTechniqueAndMedium = "Watercolor and ink on paper";
+        } else if (medium == "PAPEL" && technique == "TINTA,ACUARELA") {
+            workTechniqueAndMedium = "Watercolor and ink on paper";
+        } else if (medium == "PAPEL" && technique == "TINTA") {
+            workTechniqueAndMedium = "Ink on paper";
+        } else if (medium == "PAPEL" && technique == "CERA") {
+            workTechniqueAndMedium = "Crayon on paper";
+        } else if (medium == "PAPEL" && technique == "CERA,TINTA") {
+            workTechniqueAndMedium = "Crayon and ink on paper";
+        } else {
+            workTechniqueAndMedium = technique + " " + medium;
+        }
+        return(
+            <div className="work-detail col-xs-12 col-sm-12 col-lg-12" key={work.slug}>
+                <img className="img-fluid rounded" src={ work.image.url }/>
+                <p className="text-left" id={work.slug}><em>{work.title}</em>. { workTechniqueAndMedium }. {work.height} cm. x {work.width} cm. {work.year}.</p>
+                <Link to="/">Back to homepage</Link>
+            </div>
+        )
     }
-  }
+}
+
+WorkDetailTemplate.propTypes = propTypes
+
+export default WorkDetailTemplate
+
+export const pageQuery = graphql`
+    query getWorkDetailsBySlug($slug: String!) {
+      works(slug: { eq: $slug }) {
+        id
+        slug
+        title
+        medium
+        technique
+        year
+        date
+        height
+        width
+        image {
+          id
+          url
+          height
+          width
+          handle
+        }
+      }
+    }
 `

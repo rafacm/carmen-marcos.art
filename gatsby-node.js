@@ -10,27 +10,25 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     return new Promise((resolve, reject) => {
         const workDetailPageTemplate = path.resolve(`./src/templates/work-detail.js`);
         resolve(
-            graphql(
-                `
-query getAllFeaturedWorks {
-  allWorks {
-    edges {
-      work: node {
-        id
-        slug
-        title
-        image {
-          id
-          url
-          height
-          width
-        }
-      }
-    }
-  }
-}
-    `
-            ).then(result => {
+            graphql(`
+                query getAllFeaturedWorks {
+                  allWorks {
+                    edges {
+                      work: node {
+                        id
+                        slug
+                        title
+                        image {
+                          id
+                          url
+                          height
+                          width
+                        }
+                      }
+                    }
+                  }
+                }
+            `).then(result => {
                 if (result.errors) {
                     reject(result.errors)
                 }
@@ -55,5 +53,5 @@ query getAllFeaturedWorks {
                 })
             })
         )
-    })
-}
+    });
+};
