@@ -39,7 +39,7 @@ class WorkDetailTemplate extends React.Component {
         return(
             <div className="work-detail col-xs-12 col-sm-12 col-md-12 col-lg-12" key={work.slug}>
                 <Helmet title={`Carmen Marcos Art - ${work.title}`} />
-                <img className="img-fluid rounded" src={ work.image.url }/>
+                <img className="img-fluid rounded" src={ "https://media.graphcms.com/resize=width:1024/compress/" + work.image.handle }/>
                 <p className="text-left" id={work.slug}><em>{work.title}</em>. { workTechniqueAndMedium }. {work.height} cm. x {work.width} cm. {work.year}.</p>
                 <Link to="/">Back to homepage</Link>
             </div>
